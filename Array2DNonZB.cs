@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Arrays
+namespace MeeArraysClasses
 {
     class Array2DNonZB<T>:IEnumerable where T: struct
     {

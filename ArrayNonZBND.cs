@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Arrays
+namespace MeeArraysClasses
 {
     class ArrayNonZBND<T> : IEnumerable where T : struct
     {
