@@ -8,13 +8,12 @@ namespace MeeArraysClasses
 {
     public class SparseArray<T>
     {
-        int rowN;
-        int colN;
+        int   rowN;
+        int   colN;
+        T   defVal;
 
-        T defVal;
-
-        SortedList<int, SortedList<int, T>> rows;
-        SortedList<int, T> columns;
+        SortedList<int, SortedList<int, T>>    rows;
+        SortedList<int, T>                  columns;
 
         public SparseArray(int _rowN, int _colN)
         {
@@ -94,6 +93,12 @@ namespace MeeArraysClasses
         {
             if (j < 0 || j >= colN) return false;
             return true;
+        }
+
+        public T this[int i, int j]
+        {
+            get { return GetValue(i, j); }
+            set { SetValue(i, j, value); }
         }
     }
 }
