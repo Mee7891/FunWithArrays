@@ -70,17 +70,10 @@ namespace MeeArraysClasses
             if(columns == null)    //нет еще такой строки
             {
                 columns = new SortedList<int, T>(colN);
-                columns.Add(j, value);
                 rows.Add(i, columns);
             }
-            else if(columns.ContainsKey(j))   //есть такой элемент в строке
-            {
-                columns[j] = value;
-            }
-            else //нет такого элемента в строке
-            {
-                columns.Add(j, value);
-            }
+
+            columns[j] = value;
         }
 
         bool ProveRowIndex(int i)
