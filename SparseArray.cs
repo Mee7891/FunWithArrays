@@ -14,6 +14,7 @@ namespace MeeArraysClasses
         T defVal;
 
         SortedList<int, SortedList<int, T>> rows;
+        SortedList<int, T> columns;
 
         public SparseArray(int _rowN, int _colN)
         {
@@ -46,6 +47,19 @@ namespace MeeArraysClasses
             if(rows.ContainsKey(i))
                 return rows[i];
             return null;
+        }
+
+        T GetValue(int i, int j)
+        {
+            if (!ProveColunmIndex(j)) throw new Exception("Unacceptable column index");
+
+            columns = GetRow(i);
+
+            if (columns == null) return defVal;   //если нет такой строки
+
+            if (columns.ContainsKey(j)) return columns[j]; 
+
+            return defVal; //если нет такого элемента в строке
         }
 
         bool ProveRowIndex(int i)
