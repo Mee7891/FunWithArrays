@@ -41,7 +41,11 @@ namespace MeeArraysClasses
 
         SortedList<int, T> GetRow(int i)
         {
-            return rows[i];
+            if (!ProveRowIndex(i)) throw new Exception("Unacceptable row index");
+
+            if(rows.ContainsKey(i))
+                return rows[i];
+            return null;
         }
 
         bool ProveRowIndex(int i)
