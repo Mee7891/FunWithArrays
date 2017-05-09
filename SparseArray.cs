@@ -43,5 +43,17 @@ namespace MeeArraysClasses
         {
             return rows[i];
         }
+
+        bool ProveRowIndex(int i)
+        {
+            if (i < 0 || i >= rowN) return false;
+            return true;
+        }
+
+        bool ProveColunmIndex(int j)
+        {
+            if (j < 0 || j >= colN) return false;
+            return true;
+        }
     }
 }
