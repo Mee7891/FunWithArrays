@@ -62,6 +62,28 @@ namespace MeeArraysClasses
             return defVal; //если нет такого элемента в строке
         }
 
+        void SetValue(int i, int j, T value)
+        {
+            if (!ProveColunmIndex(j)) throw new Exception("Unacceptable column index");
+
+            columns = GetRow(i);
+
+            if(columns == null)    //нет еще такой строки
+            {
+                columns = new SortedList<int, T>(colN);
+                columns.Add(j, value);
+                rows.Add(i, columns);
+            }
+            else if(columns.ContainsKey(j))   //есть такой элемент в строке
+            {
+                columns[j] = value;
+            }
+            else //нет такого элемента в строке
+            {
+                columns.Add(j, value);
+            }
+        }
+
         bool ProveRowIndex(int i)
         {
             if (i < 0 || i >= rowN) return false;
