@@ -39,6 +39,9 @@ namespace MeeArraysClasses
             defVal = _defVal;
         }
 
-
+        SortedList<int, T> GetRow(int i)
+        {
+            return rows[i];
+        }
     }
 }
